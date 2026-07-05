@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+    background-color: #c9ddff;
+}
+
+.game {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.container {
+    width: 200vmin;
+    height: 25vmin;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6vmin;
+}
+
+.moves {
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 50%;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+#stone {
+    background-color: #ecb0e1;
+}
+
+#paper {
+    background-color: #c1aac0;
+}   
+
+#scissor {
+    background-color: #2cf6b3;
+}
+
+.moves:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.point {
+    height: 5vmin;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25vmin;
+}
+
+.msg {
+    width:auto;
+    height: 5vmin;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#new {
+    width: clamp(9vmin, 19vmin, 20vmin);
+    height: clamp(3vmin, 4vmin, 8vmin);
+    font-size: clamp(2.4vmin, 1vw, 1.8vmin);
+    font-weight: 400;
+    background-color: black;
+    color: white;
+}
+
+#new:hover {
+    background-color: #ffffff;
+    color: black;
+    cursor: pointer;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.3s;
+}

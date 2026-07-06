@@ -5,9 +5,21 @@ let newGame=document.querySelector("#new");
 let movesArray=["Stone","Paper","Scissor"];
 let userScore=0;
 let compScore=0;
+let userName="Player";
 
 msg.innerText=" Pick your move";
 
+inputName=() => {
+    let nameInput=prompt("Welcome to the game! Please enter your name: ");
+    if(nameInput && nameInput.trim()) {
+        userName=nameInput.charAt(0).toUpperCase() + nameInput.slice(1);
+    } else {
+        userName="Player";
+    }
+    document.querySelector("#user").innerText=userName + ": " + userScore;
+}
+
+inputName();
 moves.forEach((move) => {
     move.addEventListener("click", () => {
         let compMove=movesArray[Math.floor(Math.random()*movesArray.length)];
@@ -30,7 +42,7 @@ checkWin=(userMove,comp,user,computer) => {
         msg.innerText="Computer chooses scissor.You win!";
         msg.style.backgroundColor="green";
         console.log("You win!");
-        user.innerText = "User: " + ++userScore;
+        user.innerText = userName + ": " + ++userScore;
     }
     else if(use=="Stone" && comp=="Paper") {
         msg.innerText="Computer chooses paper. You lose!";
@@ -42,7 +54,7 @@ checkWin=(userMove,comp,user,computer) => {
         msg.innerText="Computer chooses stone. You win!";
         msg.style.backgroundColor="green";
         console.log("You win!");
-        user.innerText = "User: " + ++userScore;
+        user.innerText = userName + "   : " + ++userScore;
     }
     else if(use=="Paper" && comp=="Scissor") {
         msg.innerText="Computer chooses scissor. You lose!";
@@ -54,7 +66,7 @@ checkWin=(userMove,comp,user,computer) => {
         msg.innerText="Computer chooses paper. You win!";
         msg.style.backgroundColor="green";
         console.log("You win!");
-        user.innerText = "User: " + ++userScore;
+        user.innerText = userName + "   : " + ++userScore;
     }
     else if(use=="Scissor" && comp=="Stone") {
         msg.innerText="Computer chooses stone. You lose!";
@@ -71,4 +83,5 @@ newGame.addEventListener("click" , () => {
     document.querySelector("#computer").innerText="Computer: 0";
     msg.innerText="Pick your move";
     msg.style.backgroundColor="black";
+    inputName();
 })
